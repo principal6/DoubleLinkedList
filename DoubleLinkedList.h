@@ -37,7 +37,7 @@ public:
 	virtual auto IsEmpty() const->bool;
 	virtual auto GetSize() const->size_t;
 
-	virtual void Clear();
+	virtual void Clear(bool Silent = false);
 	
 	virtual void Push(DATA_TYPE Data);
 	virtual void Pop();

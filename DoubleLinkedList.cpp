@@ -6,21 +6,18 @@ DoubleLinkedList::DoubleLinkedList()
 	m_bPrintLog = false;
 	m_bPrintListAlways = false;
 
-	Clear();
+	Clear(true);
 }
 
 DoubleLinkedList::~DoubleLinkedList()
 {
 	// Dtor, clear all data without printing anything
-	m_bPrintLog = false;
-	m_bPrintListAlways = false;
-
-	Clear();
+	Clear(true);
 }
 
-void DoubleLinkedList::Clear()
+void DoubleLinkedList::Clear(bool Silent)
 {
-	if (m_bPrintLog)
+	if (m_bPrintLog && !Silent)
 	{
 		std::cout << "CLEAR" << std::endl;
 	}
@@ -47,7 +44,7 @@ void DoubleLinkedList::Clear()
 	m_pTail = nullptr;
 	m_Size = 0;
 
-	if (m_bPrintListAlways)
+	if (m_bPrintListAlways && !Silent)
 	{
 		Print();
 	}
@@ -106,7 +103,7 @@ void DoubleLinkedList::Pop()
 	{
 		// Popping the tail, which is also the head
 		// So we just clear the list
-		Clear();
+		Clear(true);
 	}
 	else
 	{

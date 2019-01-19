@@ -14,11 +14,10 @@ int main()
 	myList.Clear();
 
 	myList.Push(7);
+	myList.Pop();
 	myList.Push(9);
 	myList.Push(11);
 	myList.Push(13);
-	
-	myList.Pop();
 	myList.Pop();
 
 	myList.Insert(0, 0);
