@@ -2,33 +2,33 @@
 
 int main()
 {
-	DoubleLinkedList myList;
+	DoubleLinkedList<int*> myList;
 
 	myList.WillPrintLog(true);
 	myList.WillPrintListAlways(true);
 
-	myList.Push(1);
-	myList.Push(3);
-	myList.Push(5);
+	int a = 1;
+	int b = 3;
+	int c = 5;
 
-	myList.Clear();
-
-	myList.Push(7);
-	myList.Push(9);
-	myList.Push(11);
-	myList.Push(13);
+	myList.Push(&a);
+	myList.Push(&b);
+	myList.Push(&c);
 	
 	myList.Pop();
 	myList.Pop();
 
-	myList.Insert(0, 0);
-	myList.Insert(2, 2);
-	myList.Insert(13, 99);
+	myList.Insert(0, &a);
+	myList.Insert(2, &b);
+	myList.Insert(13, &c);
 
 	myList.Erase(3);
 
-	myList.SetItem(1, 27);
-	DATA_TYPE find = myList.GetItem(13);
+	myList.Pop();
+	myList.Pop();
+	myList.Pop();
+
+	auto find = myList.GetItem(13);
 
 	system("pause");
 	return 0;
